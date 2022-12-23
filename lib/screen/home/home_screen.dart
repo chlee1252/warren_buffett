@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warren_buffett/screen/home/components/profile_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,38 +23,24 @@ class HomeScreen extends StatelessWidget {
               Icons.search,
               color: Colors.black,
             ),
-            onPressed: () { print("search"); },
+            onPressed: () {
+              print("search");
+            },
           ),
           IconButton(
             icon: const Icon(
               Icons.refresh,
               color: Colors.black,
-            ), onPressed: () { print("refresh"); },
+            ),
+            onPressed: () {
+              print("refresh");
+            },
           )
         ],
       ),
       body: Column(
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Column(
-                  children: const [
-                    Text("Kim's Daily Board"),
-                    Text("\$0.00"),
-                  ],
-                ),
-              ),
-              CircleAvatar(
-                radius: 25.0,
-                backgroundColor: Colors.purple,
-              ),
-            ],
-          ),
+        children: const [
+          ProfileCard(),
         ],
       ),
     );
